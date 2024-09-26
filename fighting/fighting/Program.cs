@@ -26,20 +26,25 @@ while (heroHp > 0 && villainHp > 0)
     int heroDamage = generator.Next(21);
     if (heroDamage == 0)
     {
-          Console.WriteLine($"A miss!");
+        Console.WriteLine($"{heroName} missed!");
     }
-    villainHp -= heroDamage;
-    villainHp = Math.Max(0, villainHp);
-    Console.WriteLine($"{heroName} dealt {heroDamage} damage to {villainName}");
-
+    else
+    {
+        villainHp -= heroDamage;
+        villainHp = Math.Max(0, villainHp);
+        Console.WriteLine($"{heroName} dealt {heroDamage} damage to {villainName}");
+    }
     int villainDamage = generator.Next(21);
     if (villainDamage == 0)
     {
-        Console.WriteLine($"A miss!");
+        Console.WriteLine($"{villainName} missed!");
     }
-    heroHp -= villainDamage;
-    heroHp = Math.Max(0, heroHp);
-    Console.WriteLine($"{villainName} dealt {villainDamage} damage to {heroName}");
+    else
+    {
+        heroHp -= villainDamage;
+        heroHp = Math.Max(0, heroHp);
+        Console.WriteLine($"{villainName} dealt {villainDamage} damage to {heroName}");
+    }
 
     Console.WriteLine("Press any key to continue");
     Console.ReadKey();
