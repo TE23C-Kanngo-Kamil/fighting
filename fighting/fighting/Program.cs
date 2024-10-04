@@ -7,7 +7,7 @@ while (name.Length < 3)
     name = Console.ReadLine();
 }
 
-Console.WriteLine($"Hello {name}!");
+Console.WriteLine($"Hello, {name}!");
 Console.ReadLine();
 
 int heroHp = 100;
